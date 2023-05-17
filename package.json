@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/aliramazanov/project-x"
+    "url": "https://github.com/aliramazanov/project-x.git"
   },
   "description": "This is the first project",
   "main": "app.js",
