@@ -1,3 +1,3 @@
 # ABB-HW
 
-1st Homework Exercise of ABB Full Stack Advanced Program
+First HW of ABB Tech Academy - Full Stack Advanced
