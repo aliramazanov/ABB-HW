@@ -14,7 +14,7 @@ function distBuild() {
   return gulp.src("*.html").pipe(gulp.dest("dist")).pipe(browserSync.stream());
 }
 
-function sassBuild() {
+function cssFunc() {
   return gulp
     .src("src/scss/*.scss")
     .pipe(sass())
@@ -25,7 +25,7 @@ function sassBuild() {
     .pipe(browserSync.stream());
 }
 
-function jsBuild() {
+function jsFunc() {
   return gulp
     .src("src/js/*")
     .pipe(uglify())
@@ -34,7 +34,7 @@ function jsBuild() {
     .pipe(browserSync.stream());
 }
 
-function imgBuild() {
+function imgOpt() {
   return gulp
     .src("src/img/*")
     .pipe(imageMin())
@@ -42,24 +42,24 @@ function imgBuild() {
     .pipe(browserSync.stream());
 }
 
-function watchFiles() {
+function watchAll() {
   browserSync.init({
     server: {
       baseDir: "./",
     },
   });
 
-  gulp.watch("src/scss/**/*", sassBuild).on("change", browserSync.reload);
-  gulp.watch("src/js/**/*", jsBuild).on("change", browserSync.reload);
-  gulp.watch("src/img/**/*", imgBuild).on("change", browserSync.reload);
+  gulp.watch("src/scss/**/*", cssFunc).on("change", browserSync.reload);
+  gulp.watch("src/js/**/*", jsFunc).on("change", browserSync.reload);
+  gulp.watch("src/img/**/*", imgOpt).on("change", browserSync.reload);
   gulp.watch("*.html", distBuild).on("change", browserSync.reload);
 }
 
-gulp.task("dev", watchFiles);
-gulp.task("build", gulp.series(distBuild, sassBuild, jsBuild, imgBuild));
+gulp.task("dev", watchAll);
+gulp.task("build", gulp.series(distBuild, cssFunc, jsFunc, imgOpt));
 
 exports.distBuild = distBuild;
-exports.sassBuild = sassBuild;
-exports.jsBuild = jsBuild;
-exports.imgBuild = imgBuild;
-exports.watchFiles = watchFiles;
+exports.cssFunc = cssFunc;
+exports.jsFunc = jsFunc;
+exports.imgOpt = imgOpt;
+exports.watchAll = watchAll;
