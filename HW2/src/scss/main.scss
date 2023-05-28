@@ -1,0 +1,183 @@
+/* Main Part */
+
+@import "_breakpoints.scss";
+@import "_mixins.scss";
+@import "_variables.scss";
+
+html {
+  font-size: 62.5%;
+  font-family: "Roboto", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.mobile-open {
+  @include mobile-menu;
+  flex-direction: row-reverse;
+  background-color: $main-black;
+}
+
+.mobile-close {
+  @include mobile-menu;
+  background-color: $main-black;
+  margin: 3rem;
+  .mobile-close img {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
+.navbar-list {
+  @include navbar-style();
+  a {
+    text-decoration: none;
+  }
+}
+
+.header-image {
+  @include flex-centered();
+  margin: 2rem;
+
+  img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+}
+
+.mobile-open {
+  display: none;
+}
+
+.mobile-close {
+  display: none;
+}
+
+.posts-header-text {
+  display: flex;
+  margin-bottom: 3rem;
+  margin-left: 2rem;
+}
+
+.recent-posts {
+  margin-left: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cards {
+  width: calc(50% - 1rem);
+  margin-bottom: 2rem;
+  box-sizing: border-box;
+  display: flex;
+
+  .posts-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .inside-text {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.instagram {
+  background-color: #f9f9fb;
+  padding: 1.5rem;
+
+  .instagram-text {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 2rem;
+    margin-left: 2rem;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+  }
+
+  .instagram-images {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 2rem;
+    margin-left: 2rem;
+
+    div {
+      flex-basis: 24%;
+      margin-bottom: 0.8rem;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+footer {
+  padding: 5rem;
+  @include flex-centered();
+  flex-direction: column;
+  background-color: black;
+  color: white;
+
+  .footer-text-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    @include flex-centered();
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    color: white;
+  }
+
+  p {
+    max-width: 47%;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .social-icons {
+    display: flex;
+    margin-bottom: 2rem;
+
+    > * {
+      margin: 1rem;
+      border: 1px solid white;
+      border-radius: 100%;
+      padding: 2rem;
+    }
+
+    #rss {
+      @include social-icons;
+    }
+
+    #facebook {
+      @include social-icons;
+    }
+
+    #twitter {
+      @include social-icons;
+    }
+
+    #dribbble {
+      @include social-icons;
+    }
+
+    #pinterest {
+      @include social-icons;
+    }
+  }
+
+  .footer-contact {
+    @include social-icons;
+  }
+}
