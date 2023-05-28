@@ -1,4 +1,6 @@
 const gulp = require("gulp");
+const watch = require("gulp-watch");
+const sass = require("gulp-sass")(require("sass"));
 const browserSync = require("browser-sync").create();
 const autoPrefixer = require("gulp-autoprefixer");
 const clean = require("gulp-clean");
@@ -6,9 +8,7 @@ const cleanCss = require("gulp-clean-css");
 const concat = require("gulp-concat");
 const imageMin = require("gulp-imagemin");
 const jsMinify = require("gulp-minify");
-const sass = require("gulp-sass")(require("sass"));
 const uglify = require("gulp-uglify");
-const watch = require("gulp-watch");
 
 function distBuild() {
   return gulp.src("*.html").pipe(gulp.dest("dist")).pipe(browserSync.stream());

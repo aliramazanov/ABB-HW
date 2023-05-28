@@ -1,9 +1,5 @@
 /* Main Part */
 
-@import "_breakpoints.scss";
-@import "_mixins.scss";
-@import "_variables.scss";
-
 html {
   font-size: 62.5%;
   font-family: "Roboto", sans-serif;
@@ -14,6 +10,57 @@ html {
   padding: 0;
   box-sizing: border-box;
 }
+
+/* SASS Items */
+$main-black: black;
+$main-gray: #7c7c7c;
+
+@mixin flex-centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin navbar-style {
+  font-color: $main-black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.6rem;
+  margin: 5rem;
+  list-style: none;
+  text-transform: uppercase;
+}
+@mixin social-icons {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0.5rem;
+}
+
+@mixin mobile-menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+@mixin link-styles {
+  a:visited {
+    color: black;
+  }
+  a:hover {
+    color: rgb(0, 51, 255);
+  }
+  a:active {
+    color: black;
+  }
+}
+
+@mixin marginLR {
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+
+/* Elements */
 
 .mobile-open {
   @include mobile-menu;
@@ -32,16 +79,19 @@ html {
 }
 
 .navbar-list {
+  @include link-styles;
   @include navbar-style();
+  @include marginLR();
   a {
     text-decoration: none;
   }
 }
 
 .header-image {
-  @include flex-centered();
-  margin: 2rem;
+  @include marginLR();
 
+  @include flex-centered();
+  margin-bottom: 3rem;
   img {
     width: 100%;
     height: auto;
@@ -58,13 +108,14 @@ html {
 }
 
 .posts-header-text {
+  @include marginLR();
   display: flex;
   margin-bottom: 3rem;
-  margin-left: 2rem;
 }
 
 .recent-posts {
-  margin-left: 2rem;
+  @include marginLR();
+
   display: flex;
   flex-wrap: wrap;
 }
@@ -76,8 +127,17 @@ html {
   display: flex;
 
   .posts-text {
+    font-size: 1.3rem;
     display: flex;
     flex-direction: column;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  p {
+    margin-right: 4rem;
   }
 
   .inside-text {
@@ -115,37 +175,40 @@ html {
   }
 }
 
-footer {
+.footer-container {
   padding: 5rem;
-  @include flex-centered();
+  max-width: 100%;
+  display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-color: black;
   color: white;
 
+  h2 {
+    @include flex-centered();
+    padding: 1rem;
+    color: white;
+    width: 100%;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+  }
   .footer-text-top {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    max-width: 100%;
     margin-bottom: 2rem;
   }
 
-  h2 {
-    @include flex-centered();
-    flex-wrap: wrap;
-    margin-bottom: 1rem;
-    padding: 1rem;
-    color: white;
-  }
-
   p {
-    max-width: 47%;
     padding: 1rem;
     text-align: center;
   }
 
   .social-icons {
+    box-sizing: initial;
     display: flex;
     margin-bottom: 2rem;
 
@@ -178,6 +241,178 @@ footer {
   }
 
   .footer-contact {
-    @include social-icons;
+    padding: 1rem;
+  }
+}
+
+/* Media Queries - Breakpoints */
+
+@media (max-width: 767px) {
+  .header-image {
+    margin-top: 7rem;
+    @include marginLR();
+  }
+
+  .mobile-open {
+    @include flex-centered();
+    background-color: black;
+    margin: 2rem;
+    max-width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 999;
+
+    img {
+      width: 4rem;
+      height: 3rem;
+    }
+  }
+
+  .mobile-close {
+    margin: 2rem;
+
+    img {
+      width: 4rem;
+      height: 3rem;
+    }
+  }
+
+  .navbar {
+    display: none;
+    top: 0;
+    right: 0;
+    width: 30%;
+    height: 30%;
+    background-color: #f5f5f5;
+    z-index: 998;
+    padding: 3rem;
+    justify-content: center;
+
+    &.open {
+      padding: 0;
+      margin: 3rem 2rem;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      transform: translateX(0%);
+    }
+  }
+
+  .navbar-list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+    align-items: center;
+  }
+
+  .navbar-items {
+    padding: 0;
+    text-align: center;
+  }
+
+  .mobile-close {
+    position: absolute;
+    top: 0rem;
+    right: 0rem;
+    display: none;
+    z-index: 999;
+  }
+
+  .navbar.open + .mobile-close {
+    display: flex;
+  }
+
+  .recent-posts {
+    @include marginLR();
+    display: flex;
+    flex-direction: row;
+  }
+
+  .cards {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20rem;
+
+    .cards-image {
+      display: block;
+      max-width: 70%;
+    }
+
+    .posts-text {
+      margin-top: 1rem;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &:nth-child(n + 4) {
+      display: none;
+    }
+
+    .posts-text .inside-text:nth-of-type(2) {
+      display: none; /* Don't put on for Tablet */
+    }
+  }
+
+  .instagram-text h2:nth-of-type(2) {
+    display: none;
+  }
+
+  .instagram {
+    background-color: white;
+    padding: 1rem;
+  }
+  .instagram .instagram-images {
+    display: block;
+    max-width: 80%;
+    @include marginLR();
+  }
+
+  .instagram-images {
+    > div {
+      &:not(:first-child) {
+        display: none;
+      }
+    }
+  }
+  .footer {
+    display: flex;
+    font-size: 1.1rem;
+    h2 {
+      font-size: 1.4rem;
+    }
+    p {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .cards {
+    display: flex;
+    margin-right: 3rem;
+
+    .cards-image {
+      display: flex;
+      margin-bottom: 2rem;
+      margin-right: 2rem;
+    }
+
+    .posts-text {
+      display: flex;
+      flex-direction: column;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .cards .posts-text {
+    margin-left: 2rem;
+    margin-top: 1rem;
   }
 }
