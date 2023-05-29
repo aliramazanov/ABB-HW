@@ -55,7 +55,10 @@ function watchAll() {
   gulp.watch("*.html", distBuild).on("change", browserSync.reload);
 }
 
+//Watches Changes
 gulp.task("dev", watchAll);
+
+//Compiles Tasks
 gulp.task("build", gulp.series(distBuild, cssFunc, jsFunc, imgOpt));
 
 exports.distBuild = distBuild;

@@ -4,7 +4,7 @@ const navbar = document.querySelector(".navbar");
 
 mobileOpenBtn.addEventListener("click", () => {
   navbar.classList.add("open");
-  mobileCloseBtn.style.display = "block"; // 
+  mobileCloseBtn.style.display = "block";
 });
 
 mobileCloseBtn.addEventListener("click", () => {
