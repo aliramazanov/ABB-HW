@@ -34,11 +34,37 @@ cons = chatMethods {...} and link it via protoype to each object (person).
 
 */
 
-
 /* ----> Use case of super() <---- 
 
 
 
 
 
-*/ 
+*/
+
+class Employee {
+  constructor(name, age, salary) {
+    this.name = name;
+    this.age = age;
+    this.salary = salary;
+  }
+
+  get employeeDetails() {
+    console.log(
+      `${this.name} is currently employed in our company. 
+       ${this.name} is ${this.age} years old and is getting paid ${this.salary} USD per month`,
+    );
+  }
+
+  set employeeAge(changedAge) {
+    this.age = changedAge;
+  }
+
+  set employeeName(changedName) {
+    this.age = changedName;
+  }
+
+  set employeeSalary(changedSalary) {
+    this.age = changedSalary;
+  }
+}
