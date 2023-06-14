@@ -74,7 +74,7 @@ class Employee {
 
 class Programmer extends  Employee {
   constructor (name, age, salary, projects, languages)
-  super(name, age, salary)
+  super(name, age, salary);
 
 get whatProjects(){
   console.log(`${this.name} is currently working on the ${this.projects} project`);
