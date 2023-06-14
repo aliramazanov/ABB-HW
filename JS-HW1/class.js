@@ -100,7 +100,6 @@ const programmer2 = new Programmer("Johnnie Walker", 35, 6000, " Startup", [
 console.log(programmer1.employeeDetails);
 console.log(programmer1.whatProjects);
 console.log(programmer1.languages);
-
 console.log(programmer2.employeeDetails);
 console.log(programmer2.whatProjects);
 console.log(programmer2.languages);
