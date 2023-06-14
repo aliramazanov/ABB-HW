@@ -1,5 +1,4 @@
 /* ----> How prototypical inheritance works in JavaScript <----
-
 We need to look at two things: what are the prototypes and what is the prototype chain?
 We can think of them as blueprints.If you create an object, you can associate it with a prototype, 
 and that object will take properties and methods from its prototype.
@@ -13,7 +12,7 @@ In case, it reaches until the top and
 still can't find the method or property we asked, it will return null.
 
 For example, we can have a constructor function which has some methods
- that are placed inside another object.
+that are placed inside another object.
 We can call these methods every time we create a new object with this constructor.
 But if we add a new "functionality" to the methods we need ton rewrite them in two places, 
 in methods object and in the constructor function itself to link them. 
@@ -31,17 +30,18 @@ Now, we have a lot of  people (in object logic) in the chat. In this case,
 if we were to create different methods for each "... is typing" and other functionalities for each person, 
 we could not have written very effective code. Instead we could collect all the methods inside a
 cons = chatMethods {...} and link it via protoype to each object (person).
-
 */
 
 /* ----> Use case of super() <---- 
-
-
-
-
-
+When we are connectint the two different classes, we need to use super()
+It takes the properties or methods from the parent, in other words,
+when we call it on the child class it makes sure these methods and properties are already available
+before the child class gets executed.
+So, we can keep the existing properties or methods, and we can add new ones in the child class.
 */
 
+
+// Employee Class -->->
 class Employee {
   constructor(name, age, salary) {
     this.name = name;
@@ -68,3 +68,19 @@ class Employee {
     this.age = changedSalary;
   }
 }
+
+
+// Programmer Class -->->
+
+class Programmer extends  Employee {
+  constructor (name, age, salary, projects, languages)
+  super(name, age, salary)
+
+get whatProjects(){
+  console.log(`${this.name} is currently working on the ${this.projects} project`);
+}
+  set progrLang (enterLang){
+    this.languages.push(enterLang)
+  }
+}
+
