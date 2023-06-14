@@ -40,7 +40,6 @@ before the child class gets executed.
 So, we can keep the existing properties or methods, and we can add new ones in the child class.
 */
 
-
 // Employee Class -->->
 class Employee {
   constructor(name, age, salary) {
@@ -69,18 +68,39 @@ class Employee {
   }
 }
 
-
 // Programmer Class -->->
 
-class Programmer extends  Employee {
-  constructor (name, age, salary, projects, languages)
-  super(name, age, salary);
+class Programmer extends Employee {
+  constructor(name, age, salary, projects, languages) {
+    super(name, age, salary);
+    this.projects = projects;
+    this.languages = languages;
+  }
 
-get whatProjects(){
-  console.log(`${this.name} is currently working on the ${this.projects} project`);
-}
-  set progrLang (enterLang){
-    this.languages.push(enterLang)
+  get whatProjects() {
+    console.log(
+      `${this.name} is currently working on the ${this.projects} Project`,
+    );
+  }
+
+  set progrLang(enterLang) {
+    this.languages.push(enterLang);
   }
 }
 
+const programmer1 = new Programmer("Jack Daniels", 30, 5000, "Responsive", [
+  "JavaScript",
+  "C#",
+]);
+const programmer2 = new Programmer("Johnnie Walker", 35, 6000, " Startup", [
+  "Javascript",
+  "Node.js",
+]);
+
+console.log(programmer1.employeeDetails);
+console.log(programmer1.whatProjects);
+console.log(programmer1.languages);
+
+console.log(programmer2.employeeDetails);
+console.log(programmer2.whatProjects);
+console.log(programmer2.languages);
