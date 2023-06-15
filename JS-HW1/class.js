@@ -33,8 +33,8 @@ cons = chatMethods {...} and link it via protoype to each object (person).
 */
 
 /* ----> Use case of super() <---- 
-When we are connectint the two different classes, we need to use super()
-It takes the properties or methods from the parent, in other words,
+When one class is derived from a parent class and if they are both using a constructor we need to use super().
+It takes the properties from the parent, in other words,
 when we call it on the child class it makes sure these methods and properties are already available
 before the child class gets executed.
 So, we can keep the existing properties or methods, and we can add new ones in the child class.
