@@ -33,13 +33,18 @@ cons = chatMethods {...} and link it via protoype to each object (person).
 */
 
 /* ----> Use case of super() <---- 
-When one class is derived from a parent class and if they are both using a constructor we need to use super().
-It takes the properties from the parent, in other words,
+When one class is derived from a parent class and if they are both using a 
+constructor we need to use super(). It takes the properties from the parent, in other words,
 when we call it on the child class it makes sure these methods and properties are already available
 before the child class gets executed.
 So, we can keep the existing properties or methods, and we can add new ones in the child class.
+
 In other words, we can use arguments that are from constructor class of the parent class
-in the extended class, without needing to pass them to the constructor function
+in the extended class, without needing to pass them to the constructor function.
+
+For example, we can create a parent class, and many of child classes which extend from it.
+Instead of creating constructor arguments for each of them, we can create the common ones in the
+parent class, and make the child classes to inherit the properties using super() keyword.
 */
 
 // Employee Class -->->
