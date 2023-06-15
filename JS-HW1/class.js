@@ -38,6 +38,8 @@ It takes the properties from the parent, in other words,
 when we call it on the child class it makes sure these methods and properties are already available
 before the child class gets executed.
 So, we can keep the existing properties or methods, and we can add new ones in the child class.
+In other words, we can use arguments that are from constructor class of the parent class
+in the extended class, without needing to pass them to the constructor function
 */
 
 // Employee Class -->->
