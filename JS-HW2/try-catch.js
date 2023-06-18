@@ -13,6 +13,8 @@ which we can also define its message.
 
 */
 
+/* Given Array */
+
 const books = [
   {
     author: "Lucy Foley",
@@ -42,6 +44,8 @@ const books = [
     name: "Cats in Art",
   },
 ];
+
+/* Solution */
 
 const rootElement_div = document.getElementById("root");
 
