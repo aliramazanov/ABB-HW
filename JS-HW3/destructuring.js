@@ -107,7 +107,7 @@ const user1 = {
 
 const { name: nameOfUser, years: ageOfUser, isAdmin = false } = user1;
 console.log(nameOfUser, ageOfUser);
-console.log(isAdmin);
+console.log(`Is ${nameOfUser} admin: ${isAdmin}`);
 
 /* Task 4 */
 
