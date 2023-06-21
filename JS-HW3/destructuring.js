@@ -106,14 +106,68 @@ const user1 = {
 };
 
 const { name: nameOfUser, years: ageOfUser, isAdmin = false } = user1;
-console.log(nameOfUser);
-console.log(ageOfUser);
+console.log(nameOfUser, ageOfUser);
 console.log(isAdmin);
 
 /* Task 4 */
 
-/* Task 5 */
+/* 
+Task 5
+You are given an array of books. 
+You need to add one more book to it without 
+modifying the existing array (the result should be a new array).
+*/
 
-/* Task 6 */
+const books = [
+  {
+    name: "Harry Potter",
+    author: "J.K. Rowling",
+  },
+  {
+    name: "Lord of the rings",
+    author: "J.R.R. Tolkien",
+  },
+  {
+    name: "The witcher",
+    author: "Andrzej Sapkowski",
+  },
+];
 
-/* Task 7 */
+const bookToAdd = {
+  name: "Game of thrones",
+  author: "George R. R. Martin",
+};
+
+const allBooks = [...books, bookToAdd];
+console.log(allBooks);
+
+/* Task 6 
+Given the object employee. 
+Add properties age and salary to it without modifying the original object
+(a new object should be created with all the necessary properties). 
+Print the new object to the console.
+*/
+
+const employee = {
+  name: "Vitalii",
+  surname: "Klichko",
+};
+
+let newEmployee = { ...employee, age: 22, salary: 2500 };
+console.log(newEmployee);
+
+let { name: nameOfEmp, salary: salaryOfEmp } = newEmployee;
+console.log(`Salary of Employee is ${salaryOfEmp} $`);
+
+/* 
+Task 7 
+Complete the code 
+*/
+
+const array = ["value", () => "showValue"];
+
+const value = array[0];
+const showValue = array[1];
+
+alert(value);
+alert(showValue());
