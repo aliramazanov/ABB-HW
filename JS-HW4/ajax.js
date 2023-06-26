@@ -1,4 +1,3 @@
-document.getElementById("loader").addEventListener("click", collectData);
 
 function collectData() {
   const xReq = new XMLHttpRequest();
@@ -12,9 +11,16 @@ function collectData() {
 
   xReq.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-      console.log(this.responseText);
+      // console.log(this.responseText);
+      document.getElementById("data").innerHTML = this.responseText;
+    } else if ((this.status = 404)) {
+      document.getElementById("data").innerHTML = "Error 404 - Not Found";
     }
   };
 
   xReq.send();
 }
+
+xReq.onerror = function () {
+  console.log("Request failed...");
+};
