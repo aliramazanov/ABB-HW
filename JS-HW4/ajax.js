@@ -1,4 +1,3 @@
-
 function collectData() {
   const xReq = new XMLHttpRequest();
   xReq.open("GET", "https://ajax.test-danit.com/api/swapi/films", true);
@@ -21,6 +20,4 @@ function collectData() {
   xReq.send();
 }
 
-xReq.onerror = function () {
-  console.log("Request failed...");
-};
+collectData();
