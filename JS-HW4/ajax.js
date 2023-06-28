@@ -1,3 +1,15 @@
+/* 
+
+What is AJAX?
+AJAX is a method which works with XMLHttpRequest Object of the browser.
+It makes possible to transfer data between server and client sides (usually asynchronously).
+It sends a request to the server, server processes it and returns the needed data as JSON (Usually).
+We can update the data on the page without needing to refresh the browser when using AJAX.
+The request to the server is done with the help of HTTP.
+We can define the request method and set asynchronously nature of AJAX when we are calling open() method, (default is true).
+
+*/
+
 function loadData(url) {
   return new Promise((resolve, reject) => {
     const xReq = new XMLHttpRequest();
