@@ -1,17 +1,26 @@
-function collectData() {
-  const xReq = new XMLHttpRequest();
-  xReq.open("GET", "https://ajax.test-danit.com/api/swapi/films", true);
-  
-  xReq.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      // console.log(this.responseText);
-      document.getElementById("data").innerHTML = this.responseText;
-    } else if ((this.status = 404)) {
-      document.getElementById("data").innerHTML = "Error 404 - Not Found";
-    }
-  };
+function loadData(url) {
+  return new Promise((resolve, reject) => {
+    const xReq = new XMLHttpRequest();
+    xReq.open("GET", url);
 
-  xReq.send();
+    xReq.onreadystatechange = function () {
+      if (this.readyState == 4) {
+        if (this.status == 200) {
+          try {
+            resolve(JSON.parse(this.responseText));
+          } catch (error) {
+            reject(new Error("Failed to parse the response: " + error.message));
+          }
+        } else {
+          reject(new Error("Request Failed!"));
+        }
+      }
+    };
+
+    xReq.send();
+  });
 }
 
-collectData();
+function passUrl(url) {
+  return loadData(url);
+}
