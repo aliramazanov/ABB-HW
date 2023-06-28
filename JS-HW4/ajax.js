@@ -29,6 +29,7 @@ passUrl("https://ajax.test-danit.com/api/swapi/films")
   .then((episodes) => {
     episodes.forEach((episode) => {
       displayeEpisodeNames(episode);
+      displayCharacters(episode);
     });
   })
   .catch((error) => console.error("Failed to load episodes: ", error));
@@ -38,4 +39,23 @@ function displayeEpisodeNames(episode) {
   const episodeName = document.createElement("h2");
   episodeName.textContent = `Episode ${episode.episodeId}: ${episode.name}`;
   getContainer.appendChild(episodeName);
+}
+
+function displayCharacters(episode) {
+  const getContainer = document.getElementById("container");
+  const characterList = document.createElement("ul");
+
+  episode.characters.forEach((characterUrlArrayElement) => {
+    loadData(characterUrlArrayElement)
+      .then((fetchedCharacterData) => {
+        const characterName = document.createElement("li");
+        characterName.textContent = fetchedCharacterData.name;
+        characterList.appendChild(characterName);
+      })
+      .catch((error) =>
+        console.error("Failed to load character data: ", error),
+      );
+  });
+
+  getContainer.appendChild(characterList);
 }
