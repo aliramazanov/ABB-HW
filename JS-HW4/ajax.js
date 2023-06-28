@@ -24,3 +24,18 @@ function loadData(url) {
 function passUrl(url) {
   return loadData(url);
 }
+
+passUrl("https://ajax.test-danit.com/api/swapi/films")
+  .then((episodes) => {
+    episodes.forEach((episode) => {
+      displayeEpisodeNames(episode);
+    });
+  })
+  .catch((error) => console.error("Failed to load episodes: ", error));
+
+function displayeEpisodeNames(episode) {
+  const getContainer = document.getElementById("container");
+  const episodeName = document.createElement("h2");
+  episodeName.textContent = `Episode ${episode.episodeId}: ${episode.name}`;
+  getContainer.appendChild(episodeName);
+}
