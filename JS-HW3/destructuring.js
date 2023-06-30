@@ -199,9 +199,7 @@ Complete the code
 */
 
 const array = ["value", () => "showValue"];
-
-const value = array[0];
-const showValue = array[1];
+const [value, showValue] = array;
 
 alert(value);
 alert(showValue());
