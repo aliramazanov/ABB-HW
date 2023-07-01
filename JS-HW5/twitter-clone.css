@@ -1,3 +1,10 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
 .loader-container {
   display: flex;
   justify-content: center;
@@ -6,11 +13,11 @@
 }
 
 .loader {
-  border: 16px solid #000000;
-  border-top: 16px solid green;
+  border: 2rem solid #000000;
+  border-top: 2rem solid green;
   border-radius: 50%;
-  width: 120px;
-  height: 120px;
+  width: 12rem;
+  height: 12rem;
   animation: spin 2s linear infinite;
 }
 
@@ -30,7 +37,7 @@
 }
 
 #get-data {
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   padding: 0.5em 1em;
   border: none;
   border-radius: 0.25em;
