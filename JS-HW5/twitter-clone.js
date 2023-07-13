@@ -1,37 +1,50 @@
-const fetchUsers = fetch("https://ajax.test-danit.com/api/json/users").then(
-  (response) => response.json(),
-);
+class Card {
+  constructor(user, post) {
+    this.name = user.name;
+    this.email = user.email;
+    this.postId = post.id;
+    this.postBody = post.body;
+    this.profileImageURL = `https://i.pravatar.cc/150?u=${Math.random()}`;
+  }
 
-const fetchPosts = fetch("https://ajax.test-danit.com/api/json/posts").then(
-  (response) => response.json(),
-);
+  renderCard() {
+    const postCard = document.createElement("div");
+    postCard.className = "post-card";
+    postCard.setAttribute("data-id", this.postId);
 
-Promise.all([fetchUsers, fetchPosts]).then(([users, posts]) => {
+    postCard.innerHTML = `
+      <img src="${this.profileImageURL}" alt="Profile Image" class="profile-image">
+      <div class="post-info">
+        <h2 class="user-name">${this.name}</h2>
+        <p class="post-content">${this.postBody}</p>
+      </div>
+      <button class="delete-button">Delete</button>
+    `;
+    return postCard;
+  }
+}
+
+function fetchData(url) {
+  return fetch(url)
+    .then((response) => response.json())
+    .catch((error) => console.error(error));
+}
+
+Promise.all([
+  fetchData("https://ajax.test-danit.com/api/json/users"),
+  fetchData("https://ajax.test-danit.com/api/json/posts"),
+]).then(([users, posts]) => {
   displayData(users, posts);
 });
 
 function displayData(users, posts) {
   const postContainer = document.getElementById("post-container");
-
   const postWrapper = document.createElement("div");
 
   posts.forEach((post) => {
     const user = users.find((user) => user.id === post.userId);
-    const profileImageURL = `https://i.pravatar.cc/150?u=${Math.random()}`;
-
-    const postCard = document.createElement("div");
-    postCard.className = "post-card";
-    postCard.setAttribute("data-id", post.id);
-
-    postCard.innerHTML = `
-      <img src="${profileImageURL}" alt="Profile Image" class="profile-image">
-      <div class="post-info">
-        <h2 class="user-name">${user.name}</h2>
-        <p class="post-content">${post.body}</p>
-      </div>
-      <button class="delete-button">Delete</button>
-    `;
-
+    const card = new Card(user, post);
+    const postCard = card.renderCard();
     postWrapper.appendChild(postCard);
   });
 
@@ -51,7 +64,9 @@ function handleDelete(clickEvent) {
 
   fetch(`https://ajax.test-danit.com/api/json/posts/${postId}`, {
     method: "DELETE",
-  }).then(() => {
-    postCard.remove();
-  });
+  })
+    .then(() => {
+      postCard.remove();
+    })
+    .catch((error) => console.error(error));
 }
