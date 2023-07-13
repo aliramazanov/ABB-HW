@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+#hero {
+  margin: 1rem;
+  font-size: 10rem;
+}
+
+#hero h3 {
+  margin: 1rem;
+  font-size: 4rem;
+}
+
+#find-by-ip {
+  margin: 1rem;
+  font-size: 4rem;
+  background-color: black;
+  color: lime;
+  padding: 2rem;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+#result {
+  margin: 1rem;
+  font-size: 4rem;
+  padding: 1rem;
+}
