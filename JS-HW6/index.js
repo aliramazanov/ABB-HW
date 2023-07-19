@@ -27,9 +27,10 @@ const fetchLoc = async (ipAddress) => {
 };
 
 const renderData = (ipAddress, locationData) => {
-  const { country, regionName, city, org } = locationData;
+  const { country, regionName, city, org, continent } = locationData;
   result.innerHTML = `
     <p>IP Address: ${ipAddress}</p>
+    <p>Continent: ${continent}</p>
     <p>Country: ${country}</p>
     <p>Region: ${regionName}</p>
     <p>City: ${city}</p>
