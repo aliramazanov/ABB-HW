@@ -1,2 +1,2 @@
 # ABB-HW
-Homework Exercises of ABB Full Stack Development - Advanced Program 
+This repository contains HTML, CSS, SASS and JavaScript Exercises from ABB's Full Stack Development - Advanced Course.
