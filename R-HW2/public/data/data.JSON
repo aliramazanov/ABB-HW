@@ -1,0 +1,100 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Bracelet",
+      "price": 30,
+      "imgPath": "../images/bracelet-1.jpg",
+      "SKU": "XYZ12345",
+      "productColor": "transparent"
+    },
+    {
+      "id": 2,
+      "name": "Drum Kit",
+      "price": 700,
+      "imgPath": "../images/drums-1.jpg",
+      "SKU": "XYZ12345",
+      "productColor": "transparent"
+    },
+    {
+      "id": 3,
+      "name": "Glasses",
+      "price": 150,
+      "imgPath": "../images/glasses-1.jpg",
+      "SKU": "XYZ12345",
+      "productColor": "transparent"
+    },
+    {
+      "id": 4,
+      "name": "Globe",
+      "price": 400,
+      "imgPath": "../images/globe-1.jpg",
+      "SKU": "XYZ12345",
+      "productColor": "transparent"
+    },
+    {
+      "id": 5,
+      "name": "Guitar",
+      "price": 180,
+      "imgPath": "../images/guitar-1.jpg",
+      "SKU": "XYZ12345",
+      "productColor": "transparent"
+    },
+    {
+      "id": 6,
+      "name": "Obsidian Ring",
+      "price": 40,
+      "imgPath": "../images/ring-1.jpg",
+      "SKU": "XYZ12345",
+      "productColor": "transparent"
+    },
+    {
+      "id": 7,
+      "name": "Gold Ring",
+      "price": 200,
+      "imgPath": "../images/ring-2.jpg",
+      "SKU": "XYZ12345",
+      "productColor": "transparent"
+    },
+    {
+      "id": 9,
+      "name": "Damascus Sword",
+      "price": 800,
+      "imgPath": "../images/sword-2.jpg",
+      "SKU": "XYZ12345",
+      "productColor": "transparent"
+    },
+    {
+      "id": 10,
+      "name": "Minimalistic Watch",
+      "price": 70,
+      "imgPath": "../images/watch-1.jpg",
+      "SKU": "XYZ12345",
+      "productColor": "transparent"
+    },
+    {
+      "id": 11,
+      "name": "Green Watch",
+      "price": 380,
+      "imgPath": "../images/watch-2.jpg",
+      "SKU": "XYZ12345",
+      "productColor": "transparent"
+    },
+    {
+      "id": 12,
+      "name": "Analouge Pocket",
+      "price": "400",
+      "imgPath": "../images/ap-1.jpg",
+      "SKU": "XYZ12345",
+      "productColor": "transparent"
+    },
+    {
+      "id": 12,
+      "name": "Flashlight",
+      "price": "40",
+      "imgPath": "../images/flashlight-1.jpg",
+      "SKU": "XYZ12345",
+      "productColor": "transparent"
+    }
+  ]
+}
