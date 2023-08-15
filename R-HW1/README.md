@@ -1,4 +1,4 @@
 # React Modal
 
-A simple app which displays two buttons and a modal when you prss them
-Created with create-react-app
+A simple app which have two buttons and displays a modal when you press them
+Developed with create-react-app
