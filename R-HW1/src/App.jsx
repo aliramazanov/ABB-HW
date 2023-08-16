@@ -2,21 +2,23 @@ import React from "react";
 import "./App.scss";
 import Button from "./Components/Button";
 import Modal from "./Components/Modal";
+import modalInfo from "./modalData.js";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       isModalOpen: false,
+      modalId: null,
     };
   }
 
-  handleOpenModalButton = () => {
-    this.setState({ isModalOpen: true });
+  handleOpenModalButton = (modalId) => {
+    this.setState({ isModalOpen: true, modalId: modalId });
   };
 
   handleClosingOfModal = () => {
-    this.setState({ isModalOpen: false });
+    this.setState({ isModalOpen: false, modalId: null });
   };
 
   render() {
@@ -25,47 +27,23 @@ class App extends React.Component {
         <div className="buttons">
           <Button
             backgroundColor="black"
-            text="First Button"
-            onClick={this.handleOpenModalButton}
+            text="Open Modal"
+            onClick={() => this.handleOpenModalButton("modalOne")} 
           />
           <Button
             backgroundColor="black"
-            text="Second Button"
-            onClick={this.handleOpenModalButton}
+            text="Open Second"
+            onClick={() => this.handleOpenModalButton("modalTwo")} 
           />
         </div>
         {this.state.isModalOpen && (
-          <div className="modal-part" onClick={this.handleClosingOfModal}>
+          <div
+            className="modal-part"
+            onClick={this.handleClosingOfModal}
+          >
             <Modal
-              header={<h1>Header of Modal</h1>}
-              close={
-                <button
-                  className="modal-close-button"
-                  onClick={this.handleClosingOfModal}
-                >
-                  X
-                </button>
-              }
-              text={
-                <span className="modal-span">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Perferendis magnam facere fugit deleniti adipisci amet, illo
-                  ullam doloribus incidunt est!
-                </span>
-              }
-              actions={
-                <div className="actions">
-                  <button
-                    className="modal-action-buttons"
-                    onClick={this.handleClosingOfModal}
-                  >
-                    Cancel
-                  </button>
-                  <button id="continue" className="modal-action-buttons">
-                    Continue
-                  </button>
-                </div>
-              }
+              details={modalInfo.find((info) => info.id === this.state.modalId)}
+              closeModal={this.handleClosingOfModal}
             />
           </div>
         )}

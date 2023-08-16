@@ -2,21 +2,27 @@ import React from "react";
 
 class Modal extends React.Component {
   render() {
+    const { header, text, actions, renderButton, } = this.props.details;
+    const { closeModal } = this.props;
+
     return (
+      <div className="modal-all">
       <div
         className="modal-wrapper"
-        //added this to stop closing of modal window when clicked inside the modal content
         onClick={(event) => event.stopPropagation()}
-        //--------------------------------------------------------------------------------
       >
         <div className="header-part-modal">
-          <div className="header-of-modal">{this.props.header}</div>
-          <div className="header-close-button">{this.props.close}</div>
+          <div className="header-of-modal">{header}</div>
+          <div className="header-close-button">
+            {
+           renderButton && <button onClick ={closeModal} > X </button>}
+          </div>
         </div>
         <div className="modal-content">
-          <div className="text-of-modal">{this.props.text}</div>
-          <div className="actions-of-modal">{this.props.actions}</div>
+          <div className="text-of-modal">{text}</div>
+          <div className="actions-of-modal">{actions(closeModal)}</div>
         </div>
+      </div>
       </div>
     );
   }
