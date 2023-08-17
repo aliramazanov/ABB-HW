@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.scss";
-import Button from "./Components/Button";
-import Modal from "./Components/Modal";
+import Button from "./components/Button";
+import Modal from "./components/Modal";
 import modalInfo from "./modalData.js";
 
 class App extends React.Component {
@@ -27,7 +27,7 @@ class App extends React.Component {
         <div className="buttons">
           <Button
             backgroundColor="black"
-            text="Open Modal"
+            text="Open First"
             onClick={() => this.handleOpenModalButton("modalOne")} 
           />
           <Button
