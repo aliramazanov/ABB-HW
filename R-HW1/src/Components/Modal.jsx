@@ -2,7 +2,7 @@ import React from "react";
 
 class Modal extends React.Component {
   render() {
-    const { header, text, actions, renderButton, } = this.props.details;
+    const { header, text, actions, renderButton } = this.props.details;
     const { closeModal } = this.props;
 
     return (
