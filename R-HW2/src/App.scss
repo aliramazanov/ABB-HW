@@ -168,16 +168,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.4);
   z-index: 99;
 
   .modal-wrapper {
-    color: black;
-    background-color: white;
-    width: 45rem;
-    height: 25rem;
+    color: white;
+    background-color: #e94b35;
+    width: 50rem;
     border: 1px transparent;
-    border-radius: 2rem;
+    border-radius: 3rem;
 
     .header-part-modal {
       padding: 1rem;

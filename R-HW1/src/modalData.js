@@ -1,8 +1,8 @@
 const modalInfo = [
     {
       id: "modalOne",
-      header: "Modal Header",
-      text: "Modal text lorem",
+      header: "Add to the Basket?",
+      text: "Do you confirm?",
       renderButton: true,
       actions: (closeModal) => (
         <>
@@ -15,8 +15,8 @@ const modalInfo = [
     },
     {
       id: "modalTwo",
-      header: "Modal Header Two",
-      text: "Modal text lorem Two",
+      header: "Add to the Favourites",
+      text: "Are you sure?",
       renderButton: true,
       actions: (closeModal) => (
         <>

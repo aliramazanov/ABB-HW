@@ -29,8 +29,8 @@
 
   .modal-wrapper {
     color: white;
-    background-color: #e94b35;
-    width: 50rem;
+    background-color: white;
+    width: 35rem;
     border: 1px transparent;
     border-radius: 3rem;
 
@@ -39,10 +39,13 @@
       display: flex;
       justify-content: space-around;
       align-items: center;
-      background-color: #d64531;
-      border-radius: 3rem;
+      background-color: antiquewhite;
+      box-shadow: 2px 2px 1rem rgba(0, 0, 0, 0.3);
+      border-radius: 2rem;
+      margin-bottom: 1.4rem;
       .header-of-modal {
-        font-size: 5.5rem;
+        font-size: 2rem;
+        color: black;
       }
     }
 
@@ -53,56 +56,63 @@
       flex-direction: column;
 
       .text-of-modal {
-        margin-top: 2rem;
-        font-size: 3rem;
-        max-width: 40rem;
+        color: black;
+        text-align: center;
+        margin-top: 0.5rem;
+        font-size: 1.6rem;
+        max-width: 30rem;
+        margin-bottom: 1rem;
       }
 
       .actions-of-modal {
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 2rem;
+        padding: 1rem;
 
         .modal-action-buttons {
-          font-size: 2rem;
+          font-size: 1.6rem;
           margin: 1rem;
-          padding: 1rem;
-          cursor: pointer;
+          padding: 0.7rem;
           border: 1px transparent;
-          width: 20rem;
+          width: 10rem;
           padding: 1rem;
           border-radius: 3rem;
+          background-color: antiquewhite;
+          box-shadow: 1px 1px 1rem rgba(0, 0, 0, 0.3);
+        }
+        .modal-action-buttons:hover {
+          cursor: pointer;
+          transition: background-color 0.3s ease, box-shadow 0.3s ease;
+          background-color: lightcoral;
+        }
+        #continue:hover {
+          background-color: lightseagreen;
         }
       }
     }
   }
+  .modal-close-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 2rem;
+    font-size: 2rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    border: 0px transparent;
+    border-radius: 50%;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+    box-shadow: 1px 1px 1rem rgba(0, 0, 0, 0.3);
+  }
+  .modal-close-button:hover {
+    cursor: pointer;
+    transition: color 0.3s ease, background-color 0.3s ease,
+      box-shadow 0.3s ease;
+    color: white;
+    background-color: lightcoral;
+  }
 }
 
-.modal-action-buttons:hover {
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  background-color: #ffd4a9;
-}
-
-#continue:hover {
-  background-color: #a7f2ff;
-}
-
-.modal-close-button {
-  margin-left: 2rem;
-  font-size: 2rem;
-  width: 5rem;
-  height: 5rem;
-  padding: 1rem;
-  cursor: pointer;
-  border: 0px transparent;
-  border-radius: 50%;
-  color: black;
-  font-weight: bold;
-}
-
-.modal-close-button:hover {
-  transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-  color: white;
-  background-color: black;
-}

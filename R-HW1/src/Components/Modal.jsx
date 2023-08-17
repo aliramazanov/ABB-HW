@@ -15,7 +15,7 @@ class Modal extends React.Component {
           <div className="header-of-modal">{header}</div>
           <div className="header-close-button">
             {
-           renderButton && <button onClick ={closeModal} > X </button>}
+           renderButton && <button className="modal-close-button" onClick ={closeModal} > X </button>}
           </div>
         </div>
         <div className="modal-content">
