@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types"; // Import PropTypes
+
+import "./Header.scss";
 
 export default class Header extends Component {
   render() {
@@ -13,3 +16,8 @@ export default class Header extends Component {
     );
   }
 }
+
+Header.propTypes = {
+  favouritesCount: PropTypes.number.isRequired,
+  basketCount: PropTypes.number.isRequired,
+};

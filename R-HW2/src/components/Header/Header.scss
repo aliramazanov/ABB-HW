@@ -1,0 +1,45 @@
+.header-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  padding-bottom: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  padding-bottom: 5rem;
+  background-color: #ffffff;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+
+  h1 {
+    font-family: "Against", sans-serif;
+    cursor: pointer;
+    user-select: none;
+    margin-left: 3%;
+    font-size: 4rem;
+    text-shadow: 1px 1px 1px azure;
+  }
+
+  .header-your-items {
+    padding-top: 2rem;
+    display: flex;
+    align-items: center;
+    font-size: 3rem;
+    margin-right: 2%;
+    color: white;
+
+    h2 {
+      cursor: pointer;
+      user-select: none;
+      padding: 1.4rem;
+      margin-left: 2rem;
+      border-radius: 2rem;
+      background-color: lightcoral;
+      box-shadow: 1px 1px 0.5rem rgba(0, 0, 0, 0.3);
+    }
+
+    #header-basket {
+      background-color: lightseagreen;
+    }
+  }
+}

@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
+import "./Products.scss";
 
 export default class Product extends Component {
   render() {
@@ -25,3 +27,11 @@ export default class Product extends Component {
     );
   }
 }
+
+Product.propTypes = {
+  backgroundColor: PropTypes.string,
+  imgPath: PropTypes.string,
+  name: PropTypes.string,
+  SKU: PropTypes.string,
+  children: PropTypes.node,
+};
