@@ -6,23 +6,27 @@ class Modal extends React.Component {
     const { closeModal } = this.props;
 
     return (
-      <div className="modal-all">
-      <div
-        className="modal-wrapper"
-        onClick={(event) => event.stopPropagation()}
-      >
-        <div className="header-part-modal">
-          <div className="header-of-modal">{header}</div>
-          <div className="header-close-button">
-            {
-           renderButton && <button className="modal-close-button" onClick ={closeModal} > X </button>}
+      <div className="modal-part" onClick={closeModal}>
+        <div
+          className="modal-wrapper"
+          onClick={(event) => event.stopPropagation()}
+        >
+          <div className="header-part-modal">
+            <div className="header-of-modal">{header}</div>
+            <div className="header-close-button">
+              {renderButton && (
+                <button className="modal-close-button" onClick={closeModal}>
+                  {" "}
+                  X{" "}
+                </button>
+              )}
+            </div>
+          </div>
+          <div className="modal-content">
+            <div className="text-of-modal">{text}</div>
+            <div className="actions-of-modal">{actions(closeModal)}</div>
           </div>
         </div>
-        <div className="modal-content">
-          <div className="text-of-modal">{text}</div>
-          <div className="actions-of-modal">{actions(closeModal)}</div>
-        </div>
-      </div>
       </div>
     );
   }
