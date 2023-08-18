@@ -16,8 +16,7 @@ class Modal extends React.Component {
             <div className="header-close-button">
               {renderButton && (
                 <button className="modal-close-button" onClick={closeModal}>
-                  {" "}
-                  X{" "}
+                  X
                 </button>
               )}
             </div>
