@@ -1,6 +1,6 @@
+import "./Modal.scss";
 import React from "react";
 import PropTypes from "prop-types";
-import "./Modal.scss";
 
 class Modal extends React.Component {
   render() {

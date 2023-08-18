@@ -1,6 +1,6 @@
+import "./Products.scss";
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import "./Products.scss";
 
 export default class Product extends Component {
   render() {

@@ -9,3 +9,4 @@ export const fetchData = async () => {
     throw new Error("Error when fetching: " + error);
   }
 };
+

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import "./Button.scss";
 class FavButton extends Component {
   render() {
     const { isFavourite, onClick } = this.props;

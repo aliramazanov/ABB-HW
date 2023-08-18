@@ -1,6 +1,6 @@
+import "./Header.scss";
 import React from "react";
 import PropTypes from "prop-types";
-import "./Header.scss";
 
 export default class Header extends React.Component {
   render() {

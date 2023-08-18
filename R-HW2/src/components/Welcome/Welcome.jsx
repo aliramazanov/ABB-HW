@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import "./Welcome.scss";
-export default class Welcome extends Component {
+export default class Welcome extends React.Component {
   render() {
     return (
       <div className="product-welcome">
