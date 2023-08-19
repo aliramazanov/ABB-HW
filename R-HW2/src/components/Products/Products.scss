@@ -9,8 +9,8 @@
     display: flex;
     align-items: center;
     justify-content: baseline;
-    width: 38rem;
-    height: 23rem;
+    width: 40rem;
+    height: 22rem;
     margin: 2rem;
     padding: 1rem;
     border-radius: 2rem;
@@ -18,7 +18,7 @@
 
     .product-image-wrapper img {
       margin: 0.5rem;
-      border-radius: 15%;
+      border-radius: 2rem;
       max-width: 19rem;
       box-shadow: 1px 1px 1rem rgba(0, 0, 0, 0.3);
     }

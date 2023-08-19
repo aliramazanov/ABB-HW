@@ -14,6 +14,7 @@
     color: white;
     background-color: white;
     width: 35rem;
+    height: 21rem;
     border: 1px transparent;
     border-radius: 3rem;
 
@@ -42,7 +43,7 @@
         color: black;
         text-align: center;
         margin-top: 0.5rem;
-        font-size: 1.6rem;
+        font-size: 1.8rem;
         max-width: 30rem;
         margin-bottom: 1rem;
       }
@@ -51,7 +52,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 1rem;
+        padding: 0.5rem;
 
         .modal-action-buttons {
           font-size: 1.6rem;

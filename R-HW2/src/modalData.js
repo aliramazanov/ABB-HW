@@ -1,7 +1,7 @@
 const modalInfo = [
   {
     id: "modalOne",
-    header: "Confirmation",
+    header: "Confirmation Message",
     text: "Do you confirm adding this item to the basket?",
     renderButton: true,
     actions: (closeModal, handleContinueButtonClick) => (
