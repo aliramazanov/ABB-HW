@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "target": "ES6",
+    "module": "CommonJS",
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": false,
+    "rootDir": "./src",
+    "outDir": "./dist",
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"]
+}
