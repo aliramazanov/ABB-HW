@@ -4,7 +4,7 @@
 
 Simple News Service is a full-stack web application designed for managing news articles. It comprises a client-side built using HTML, TypeScript, and CSS, along with a server-side implementation using pure Node.js with TypeScript. The server runs on localhost, specifically on port 9595.
 
-## TechnicalS
+## Technicals
 
 The server should provide the following functionality:
 
