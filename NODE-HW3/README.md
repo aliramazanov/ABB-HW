@@ -17,5 +17,5 @@ Before running the app, follow these setup steps:
 1. Data is stored in the `database.json` file located in the root of the server folder.
 2. Create a `.env` file in the root directory with the following content:
 
-HOST=localhost
+HOST=localhost <br/>
 PORT=9595
