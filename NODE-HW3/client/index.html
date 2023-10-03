@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>News</title>
+  </head>
+  <body>
+    <main>
+      <div class="app-container">
+        <header>
+          <div class="header-container"> 
+            <span class="hero">📰 </span>
+            <h1>Today's Articles & Stories</h1>
+          </div>
+        </header>
+        <div
+          id="articles"
+          class="article-row"
+          role="region"
+          aria-label="News Articles"
+        ></div>
+        <div id="pagination" class="button-container">
+          <button type="button" id="prevButton" aria-label="Previous Page">
+            Previous
+          </button>
+          <button type="button" id="nextButton" aria-label="Next Page">
+            Next
+          </button>
+        </div>
+      </div>
+      <footer>
+        <div class="footer-text">
+          <p>&copy; 2023 Ali Ramazanov. Contact: <a href="mailto:aliasifzade@gmail.com">aliasifzade@gmail.com</a></p>
+        </div>
+      </footer>
+    </div>
+      <noscript>
+        <p>
+          This page requires JavaScript to function properly. Please enable
+          JavaScript in your browser settings.
+        </p>
+      </noscript>
+    </main>
+    <script defer src="app.js"></script>
+  </body>
+</html>
